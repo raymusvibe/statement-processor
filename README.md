@@ -73,7 +73,7 @@ Once the application is running, a [swagger interface](http://localhost:8080/swa
 - Swagger integrates easily with Spring boot to create an easy-to-use interface to interact with the API
 - OpenCSV and Jackson-XML are very competent libraries for parsing CSV and XML data
 
-## Areas for additional development not reached due to time
+## Areas for additional development
 
 - Add support for stricter format validation for XML files
 - Add CI/CD support
