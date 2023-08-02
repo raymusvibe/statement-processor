@@ -1,0 +1,18 @@
+[
+  {
+    "@reference": "138932",
+    "accountNumber": "NL90ABNA0585647886",
+    "description": "Flowers for Richard Bakker",
+    "startBalance": "94.9",
+    "mutation": "+14.63",
+    "endBalance": "109.53"
+  },
+  {
+    "@reference": "131254",
+    "accountNumber": "NL93ABNA0585619023",
+    "description": "Candy from Vincent de Vries",
+    "startBalance": "5429",
+    "mutation": "-939",
+    "endBalance": "6368"
+  }
+]
