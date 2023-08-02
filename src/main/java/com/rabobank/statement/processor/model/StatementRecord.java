@@ -1,6 +1,5 @@
 package com.rabobank.statement.processor.model;
 
-import jakarta.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Objects;
 import lombok.AllArgsConstructor;
@@ -15,9 +14,7 @@ import lombok.NoArgsConstructor;
 public class StatementRecord {
     private Long reference;
     private String accountNumber;
-
-    @NotNull private String description;
-
+    private String description;
     private BigDecimal startBalance;
     private BigDecimal mutation;
     private BigDecimal endBalance;
