@@ -8,7 +8,7 @@ import com.rabobank.statement.processor.exception.UnsupportedFileTypeException;
 import com.rabobank.statement.processor.filereader.abstractions.FileReader;
 import org.junit.jupiter.api.Test;
 
-public class FileReaderFactoryUnitTests {
+class FileReaderFactoryUnitTests {
 
     @Test
     void FileReaderFactory_WhenXmlFileType_XmlFileReader() {

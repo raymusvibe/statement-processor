@@ -20,7 +20,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 @WebMvcTest(StatementProcessorController.class)
-public class StatementProcessorControllerUnitTests {
+class StatementProcessorControllerUnitTests {
     @MockBean
     private StatementValidationService validationService;
 

@@ -4,25 +4,32 @@ import com.rabobank.statement.processor.dto.InvalidRecord;
 import com.rabobank.statement.processor.model.StatementRecord;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class StatementValidator {
+    private StatementValidator() {
+        throw new UnsupportedOperationException("Class should not be instantiated");
+    }
+
     public static List<InvalidRecord> validate(List<StatementRecord> records) {
         return records.parallelStream()
-                .filter(record -> hasWrongEndBalance(record) || hasDuplicateReference(records, record))
+                .filter(statementRecord ->
+                        hasWrongEndBalance(statementRecord) || hasDuplicateReference(records, statementRecord))
                 .map(StatementValidator::createFailedRecord)
-                .collect(Collectors.toList());
+                .toList();
     }
 
-    private static boolean hasWrongEndBalance(StatementRecord record) {
-        return !record.getStartBalance().add(record.getMutation()).equals(record.getEndBalance());
+    private static boolean hasWrongEndBalance(StatementRecord statementRecord) {
+        return !statementRecord
+                .getStartBalance()
+                .add(statementRecord.getMutation())
+                .equals(statementRecord.getEndBalance());
     }
 
-    private static boolean hasDuplicateReference(List<StatementRecord> records, StatementRecord record) {
-        return Collections.frequency(records, record) > 1;
+    private static boolean hasDuplicateReference(List<StatementRecord> records, StatementRecord statementRecord) {
+        return Collections.frequency(records, statementRecord) > 1;
     }
 
-    private static InvalidRecord createFailedRecord(StatementRecord record) {
-        return new InvalidRecord(record.getReference(), record.getDescription());
+    private static InvalidRecord createFailedRecord(StatementRecord statementRecord) {
+        return new InvalidRecord(statementRecord.getReference(), statementRecord.getDescription());
     }
 }

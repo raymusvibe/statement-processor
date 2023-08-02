@@ -35,14 +35,14 @@ public class CsvFileReader implements FileReader {
                     .withIgnoreEmptyLine(true)
                     .build()
                     .parse();
-        } catch (RuntimeException e) {
+        } catch (NumberFormatException | NullPointerException e) {
             throw new StatementValidationException(e);
         }
 
         return records.parallelStream().map(this::mapToStatementRecord).toList();
     }
 
-    private StatementRecord mapToStatementRecord(CsvStatementRecord record) {
-        return modelMapper.map(record, StatementRecord.class);
+    private StatementRecord mapToStatementRecord(CsvStatementRecord statementRecord) {
+        return modelMapper.map(statementRecord, StatementRecord.class);
     }
 }

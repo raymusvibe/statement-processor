@@ -15,7 +15,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.mock.web.MockMultipartFile;
 
 @SpringBootTest
-public class StatementValidationServiceIntegrationTests {
+class StatementValidationServiceIntegrationTests {
     @Autowired
     private StatementValidationService statementValidationService;
 

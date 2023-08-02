@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-public class StatementValidatorUnitTests {
+class StatementValidatorUnitTests {
 
     @Test
     void StatementValidator_WhenEmptyRecords_NoFailures() {

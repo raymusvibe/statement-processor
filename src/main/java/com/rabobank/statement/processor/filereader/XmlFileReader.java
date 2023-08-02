@@ -34,7 +34,7 @@ public class XmlFileReader implements FileReader {
                 .toList();
     }
 
-    private StatementRecord mapToStatementRecord(XmlStatementRecord record) {
-        return modelMapper.map(record, StatementRecord.class);
+    private StatementRecord mapToStatementRecord(XmlStatementRecord statementRecord) {
+        return modelMapper.map(statementRecord, StatementRecord.class);
     }
 }

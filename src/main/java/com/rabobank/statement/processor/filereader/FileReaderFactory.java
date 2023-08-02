@@ -5,6 +5,10 @@ import com.rabobank.statement.processor.exception.UnsupportedFileTypeException;
 import com.rabobank.statement.processor.filereader.abstractions.FileReader;
 
 public class FileReaderFactory {
+    private FileReaderFactory() {
+        throw new UnsupportedOperationException("Factory class should not be instantiated");
+    }
+
     public static FileReader getFileReader(FileType fileType) {
         switch (fileType) {
             case CSV:
