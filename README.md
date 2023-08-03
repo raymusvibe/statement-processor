@@ -75,9 +75,8 @@ Once the application is running, a [swagger interface](http://localhost:8080/swa
 
 ## Areas for additional development
 
-- Add support for stricter format validation for XML files
 - Add CI/CD support
-- Additional tests can be added
+- Additional tests
 
 ## Code coverage and results of static code analysis
 
