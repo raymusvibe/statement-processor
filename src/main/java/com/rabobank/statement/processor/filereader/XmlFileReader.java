@@ -34,8 +34,8 @@ public class XmlFileReader implements FileReader {
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
-            SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema statementSchema = sf.newSchema(getSchemaFile());
+            SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            Schema statementSchema = schemaFactory.newSchema(getSchemaFile());
             jaxbUnmarshaller.setSchema(statementSchema);
 
             XmlRecordsRoot xmlRecordsRoot = (XmlRecordsRoot) jaxbUnmarshaller.unmarshal(inputStream);
