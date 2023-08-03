@@ -19,7 +19,7 @@ class StatementValidationServiceIntegrationTests {
     @Autowired
     private StatementValidationService statementValidationService;
 
-    private final Resource unsupported_format_records = new ClassPathResource("unsupported_format/json_format.json");
+    private final Resource unsupported_format_records = new ClassPathResource("unsupported_format/valid_records.json");
     private final Resource malformed_records = new ClassPathResource("xml/malformed_records.xml");
     private final Resource empty_records = new ClassPathResource("csv/empty_records.csv");
     private final Resource invalid_records = new ClassPathResource("csv/invalid_records.csv");
@@ -28,7 +28,7 @@ class StatementValidationServiceIntegrationTests {
     void StatementValidationService_WhenUnsupportedFileFormat_UnsupportedFileTypeException() throws IOException {
         MockMultipartFile file = new MockMultipartFile(
                 "file",
-                "unsupported_format/json_format.json",
+                "unsupported_format/valid_records.json",
                 "text/json",
                 unsupported_format_records.getInputStream());
 

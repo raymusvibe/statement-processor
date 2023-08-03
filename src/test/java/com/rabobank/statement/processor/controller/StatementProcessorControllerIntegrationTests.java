@@ -37,7 +37,7 @@ public class StatementProcessorControllerIntegrationTests {
     private final Resource empty_records = new ClassPathResource("xml/empty_records.xml");
     private final Resource valid_records = new ClassPathResource("csv/valid_records.csv");
     private final Resource malformed_records = new ClassPathResource("xml/malformed_records.xml");
-    private final Resource unsupported_format_records = new ClassPathResource("unsupported_format/json_format.json");
+    private final Resource unsupported_format_records = new ClassPathResource("unsupported_format/valid_records.json");
     private final Resource invalid_records = new ClassPathResource("csv/invalid_records.csv");
 
     @Test

@@ -29,7 +29,7 @@ class StatementProcessorControllerUnitTests {
 
     private final Resource valid_records = new ClassPathResource("xml/valid_records.xml");
     private final Resource malformed_records = new ClassPathResource("xml/malformed_records.xml");
-    private final Resource unsupported_format_records = new ClassPathResource("unsupported_format/json_format.json");
+    private final Resource unsupported_format_records = new ClassPathResource("unsupported_format/valid_records.json");
 
     @Test
     void StatementProcessorController_WhenValidUpload_200Response() throws Exception {
@@ -62,7 +62,7 @@ class StatementProcessorControllerUnitTests {
     void StatementProcessorController_WhenUnsupportedFileFormat_400Response() throws Exception {
         MockMultipartFile file = new MockMultipartFile(
                 "file",
-                "unsupported_format/json_format.json",
+                "unsupported_format/valid_records.json",
                 "text/json",
                 unsupported_format_records.getInputStream());
         Mockito.when(validationService.validateStatementFile(file))
