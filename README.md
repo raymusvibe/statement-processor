@@ -80,6 +80,6 @@ Once the application is running, a [swagger interface](http://localhost:8080/swa
 
 ## Code coverage and results of static code analysis
 
-- Jacoco reports that 100% of classes are covered by tests, and 88% of lines
+- Jacoco reports that 100% of classes are covered by tests, and 93% of lines
 - SonarQube reports no major issues or code smells
 

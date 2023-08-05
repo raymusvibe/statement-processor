@@ -64,8 +64,8 @@ class StatementValidatorUnitTests {
         List<InvalidRecord> invalidRecords = StatementValidator.validate(records);
 
         assertTrue(!invalidRecords.isEmpty());
-        assertEquals(invalidBalanceRef, invalidRecords.get(0).reference());
-        assertEquals(invalidBalanceRecordDescription, invalidRecords.get(0).description());
+        assertEquals(invalidBalanceRef, invalidRecords.get(0).getReference());
+        assertEquals(invalidBalanceRecordDescription, invalidRecords.get(0).getDescription());
     }
 
     @Test
@@ -100,7 +100,7 @@ class StatementValidatorUnitTests {
         List<InvalidRecord> invalidRecords = StatementValidator.validate(records);
 
         invalidRecords.stream()
-                .map(InvalidRecord::reference)
+                .map(InvalidRecord::getReference)
                 .forEach(reference -> assertEquals(duplicateRef, reference));
     }
 }

@@ -35,7 +35,7 @@ public class CsvFileReader implements FileReader {
                     .withIgnoreEmptyLine(true)
                     .build()
                     .parse();
-        } catch (NumberFormatException | NullPointerException e) {
+        } catch (RuntimeException e) {
             throw new StatementValidationException(e);
         }
 

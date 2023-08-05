@@ -31,14 +31,15 @@ public class StatementProcessorControllerIntegrationTests {
 
     @BeforeEach
     public void beforeEach() {
-        baseUrl = baseUrl + ":" + port + "/api/v1/validate";
+        baseUrl = baseUrl + ":" + port + "/api/v1/report";
     }
 
-    private final Resource empty_records = new ClassPathResource("xml/empty_records.xml");
-    private final Resource valid_records = new ClassPathResource("csv/valid_records.csv");
-    private final Resource malformed_records = new ClassPathResource("xml/malformed_records.xml");
-    private final Resource unsupported_format_records = new ClassPathResource("unsupported_format/valid_records.json");
-    private final Resource invalid_records = new ClassPathResource("csv/invalid_records.csv");
+    private final Resource empty_records = new ClassPathResource("import/xml/empty_records.xml");
+    private final Resource valid_records = new ClassPathResource("import/csv/valid_records.csv");
+    private final Resource malformed_records = new ClassPathResource("import/xml/malformed_records.xml");
+    private final Resource unsupported_format_records =
+            new ClassPathResource("import/unsupported_format/valid_records.json");
+    private final Resource invalid_records = new ClassPathResource("import/csv/invalid_records.csv");
 
     @Test
     void StatementProcessorController_WhenEmptyRecords_NoValidationFailures() throws IOException {
