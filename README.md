@@ -1,4 +1,4 @@
-# Statement Processor
+# Rabobank Statement Processor
 
 # Requirements
 
@@ -51,7 +51,8 @@ You'll need to install and run docker on localhost to proceed with the following
 
 ### Swagger-UI:
 
-Once the application is running, a [swagger interface](http://localhost:8080/swagger-ui/index.htm) will become available
+Once the application is running, a [swagger interface](http://localhost:8080/swagger-ui/index.htm) will become available.
+One of the endpoints produces the report in JSON format, and the other allows users to download the report in CSV format.
 
 ## Technologies used
 
