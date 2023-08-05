@@ -11,7 +11,7 @@ import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 import com.rabobank.statement.processor.dto.InvalidRecord;
-import com.rabobank.statement.processor.exception.ReportWriteException;
+import com.rabobank.statement.processor.exception.ReportExporterException;
 import com.rabobank.statement.processor.reportexporter.abstractions.ReportExporter;
 import java.io.IOException;
 import java.io.StringReader;
@@ -49,7 +49,7 @@ public class CSVExporter implements ReportExporter {
 
             writer.write(failedRecords);
         } catch (CsvDataTypeMismatchException | CsvRequiredFieldEmptyException | IOException e) {
-            throw new ReportWriteException(e);
+            throw new ReportExporterException(e);
         }
     }
 }

@@ -1,5 +1,7 @@
 # Rabobank Statement Processor
 
+The Rabobank statement processor provides an API to validate statements records in CSV and XML format.
+
 # Requirements
 
 - [Java 17](https://jdk.java.net/17/),
@@ -66,13 +68,13 @@ One of the endpoints produces the report in JSON format, and the other allows us
 - JUnit 5,
 - Docker
 - OpenCSV
-- Jackson-XML
+- JAXB
 
 ## Architectural choices
 
 - Chose Spring boot for its rapid application development properties
 - Swagger integrates easily with Spring boot to create an easy-to-use interface to interact with the API
-- OpenCSV and Jackson-XML are very competent libraries for parsing CSV and XML data
+- OpenCSV and JAXB are competent libraries for parsing and validating CSV and XML data
 
 ## Areas for additional development
 

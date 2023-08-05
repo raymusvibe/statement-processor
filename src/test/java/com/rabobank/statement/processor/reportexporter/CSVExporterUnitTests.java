@@ -3,7 +3,7 @@ package com.rabobank.statement.processor.reportexporter;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.rabobank.statement.processor.dto.InvalidRecord;
-import com.rabobank.statement.processor.exception.ReportWriteException;
+import com.rabobank.statement.processor.exception.ReportExporterException;
 import com.rabobank.statement.processor.reportexporter.abstractions.ReportExporter;
 import java.io.Writer;
 import java.util.List;
@@ -22,6 +22,6 @@ class CSVExporterUnitTests {
         List<InvalidRecord> invalidRecords = List.of(emptyRecord);
         Writer writer = Writer.nullWriter();
 
-        assertThrows(ReportWriteException.class, () -> reportExporter.writeFailedRecords(invalidRecords, writer));
+        assertThrows(ReportExporterException.class, () -> reportExporter.writeFailedRecords(invalidRecords, writer));
     }
 }
