@@ -15,17 +15,17 @@ class XmlStatementReaderUnitTests {
     XmlStatementReader xmlReader = new XmlStatementReader();
     private final Resource empty_records = new ClassPathResource("import/xml/empty_records.xml");
     private final Resource valid_records = new ClassPathResource("import/xml/valid_records.xml");
-    private final Resource malformed_records = new ClassPathResource("import/csv/malformed_records.csv");
+    private final Resource malformed_records = new ClassPathResource("import/xml/malformed_records.xml");
 
     @Test
-    void XmlReader_WhenEmptyUpload_NoRecords() throws IOException {
+    void XmlStatementReader_WhenEmptyUpload_NoRecords() throws IOException {
         List<StatementRecord> statementRecordList = xmlReader.readRecords(empty_records.getInputStream());
 
         assertTrue(statementRecordList.isEmpty());
     }
 
     @Test
-    void XmlReader_WhenValidUpload_CorrectRecordSize() throws IOException {
+    void XmlStatementReader_WhenValidUpload_CorrectRecordSize() throws IOException {
         int recordSize = 4;
 
         List<StatementRecord> statementRecordList = xmlReader.readRecords(valid_records.getInputStream());
@@ -34,7 +34,7 @@ class XmlStatementReaderUnitTests {
     }
 
     @Test
-    void XmlReader_WhenMalformedUpload_StatementValidationException() throws IOException {
+    void XmlStatementReader_WhenMalformedUpload_StatementValidationException() throws IOException {
         InputStream inputStream = malformed_records.getInputStream();
 
         assertThrows(StatementValidationException.class, () -> xmlReader.readRecords(inputStream));

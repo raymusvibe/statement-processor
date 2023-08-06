@@ -28,13 +28,13 @@ class StatementValidationControllerUnitTests {
     private StatementValidationService validationService;
 
     @MockBean
-    ReportExporter reportExporter;
+    private ReportExporter reportExporter;
 
     @Autowired
-    MockMvc mockMvc;
+    private MockMvc mockMvc;
 
     private final Resource valid_records = new ClassPathResource("import/xml/valid_records.xml");
-    private final Resource malformed_records = new ClassPathResource("import/xml/malformed_records.xml");
+    private final Resource malformed_records = new ClassPathResource("import/csv/malformed_records.csv");
     private final Resource unsupported_format_records =
             new ClassPathResource("import/unsupported_format/valid_records.json");
 

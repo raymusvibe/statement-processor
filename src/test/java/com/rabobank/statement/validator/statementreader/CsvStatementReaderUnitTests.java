@@ -19,14 +19,14 @@ class CsvStatementReaderUnitTests {
     private final Resource malformed_records = new ClassPathResource("import/csv/malformed_records.csv");
 
     @Test
-    void CsvReader_WhenEmptyUpload_NoRecords() throws IOException {
+    void CsvStatementReader_WhenEmptyUpload_NoRecords() throws IOException {
         List<StatementRecord> statementRecordList = csvReader.readRecords(empty_records.getInputStream());
 
         assertTrue(statementRecordList.isEmpty());
     }
 
     @Test
-    void CsvReader_WhenValidUpload_CorrectRecordSize() throws IOException {
+    void CsvStatementReader_WhenValidUpload_CorrectRecordSize() throws IOException {
         int recordSize = 10;
 
         List<StatementRecord> statementRecordList = csvReader.readRecords(valid_records.getInputStream());
@@ -35,7 +35,7 @@ class CsvStatementReaderUnitTests {
     }
 
     @Test
-    void CsvReader_WhenMalformedUpload_StatementValidationException() throws IOException {
+    void CsvStatementReader_WhenMalformedUpload_StatementValidationException() throws IOException {
         InputStream inputStream = malformed_records.getInputStream();
 
         assertThrows(StatementValidationException.class, () -> csvReader.readRecords(inputStream));
