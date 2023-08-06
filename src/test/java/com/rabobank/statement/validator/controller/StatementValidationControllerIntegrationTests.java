@@ -3,7 +3,6 @@ package com.rabobank.statement.validator.controller;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.rabobank.statement.validator.dto.ValidationResult;
-import java.io.IOException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -42,7 +41,7 @@ public class StatementValidationControllerIntegrationTests {
     private final Resource invalid_records = new ClassPathResource("import/csv/invalid_records.csv");
 
     @Test
-    void StatementProcessorController_WhenEmptyRecords_NoValidationFailures() throws IOException {
+    void StatementProcessorController_WhenEmptyRecords_NoValidationFailures() {
         MultiValueMap<String, Object> parts = new LinkedMultiValueMap<>();
         parts.add("file", empty_records);
 
@@ -53,7 +52,7 @@ public class StatementValidationControllerIntegrationTests {
     }
 
     @Test
-    void StatementProcessorController_WhenValidRecords_NoValidationFailures() throws IOException {
+    void StatementProcessorController_WhenValidRecords_NoValidationFailures() {
         MultiValueMap<String, Object> parts = new LinkedMultiValueMap<>();
         parts.add("file", valid_records);
 
@@ -64,7 +63,7 @@ public class StatementValidationControllerIntegrationTests {
     }
 
     @Test
-    void StatementProcessorController_WhenMalformedRecords_BadRequestException() throws IOException {
+    void StatementProcessorController_WhenMalformedRecords_BadRequestException() {
         MultiValueMap<String, Object> parts = new LinkedMultiValueMap<>();
         parts.add("file", malformed_records);
 
@@ -74,7 +73,7 @@ public class StatementValidationControllerIntegrationTests {
     }
 
     @Test
-    void StatementProcessorController_WhenUnsupportedFormat_BadRequestException() throws IOException {
+    void StatementProcessorController_WhenUnsupportedFormat_BadRequestException() {
         MultiValueMap<String, Object> parts = new LinkedMultiValueMap<>();
         parts.add("file", unsupported_format_records);
 
@@ -84,7 +83,7 @@ public class StatementValidationControllerIntegrationTests {
     }
 
     @Test
-    void StatementProcessorController_WhenInvalidRecords_CorrectFailureSize() throws IOException {
+    void StatementProcessorController_WhenInvalidRecords_CorrectFailureSize() {
         int numberOfInvalidRecords = 3;
         MultiValueMap<String, Object> parts = new LinkedMultiValueMap<>();
         parts.add("file", invalid_records);
