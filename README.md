@@ -1,7 +1,7 @@
 # Rabobank Statement Validator
 
 The Rabobank statement validator provides an API to validate statements records in CSV and XML format.
-The validation results are returned in JSON or CSV format through the two API endpoints available.
+The validation results are returned in JSON or CSV format through the two API endpoints.
 
 # Requirements
 
