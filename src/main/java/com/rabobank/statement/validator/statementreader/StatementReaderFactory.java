@@ -10,13 +10,10 @@ public class StatementReaderFactory {
     }
 
     public static StatementReader getStatementReader(FileType fileType) {
-        switch (fileType) {
-            case CSV:
-                return new CsvStatementReader();
-            case XML:
-                return new XmlStatementReader();
-            default:
-                throw new UnsupportedFileTypeException("The provided file type is not supported");
-        }
+        return switch (fileType) {
+            case CSV -> new CsvStatementReader();
+            case XML -> new XmlStatementReader();
+            default -> throw new UnsupportedFileTypeException("The provided file type is not supported");
+        };
     }
 }
