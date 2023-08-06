@@ -81,7 +81,9 @@ and the other allows users to download the report in CSV format (/api/v1/report/
 ## Areas for additional development
 
 - Add CI/CD support
-- Additional tests
+- Add tests
+- Add front-end to interact with the API
+- Scan all incoming files for security threats
 
 ## Code coverage and results of static code analysis
 
