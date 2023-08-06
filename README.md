@@ -1,6 +1,7 @@
-# Rabobank Statement Processor
+# Rabobank Statement Validator
 
-The Rabobank statement processor provides an API to validate statements records in CSV and XML format.
+The Rabobank statement validator provides an API to validate statements records in CSV and XML format.
+The validation results are returned in JSON or CSV format through the two API endpoints available.
 
 # Requirements
 
@@ -24,15 +25,15 @@ The Rabobank statement processor provides an API to validate statements records 
 
 ```
 ./mvnw clean verify sonar:sonar \
--Dsonar.projectKey=Statement-Processor \
--Dsonar.projectName='Statement-Processor' \
+-Dsonar.projectKey=Statement-Validator \
+-Dsonar.projectName='Statement-Validator' \
 -Dsonar.host.url=http://localhost:9000 \
 -Dsonar.token={security_token}
 ```
 
 ## How to run the application with Java
 
-```java -jar statement.processor-0.0.1-SNAPSHOT.jar```
+```java -jar validator-0.0.1-SNAPSHOT.jar```
 
 ## Run the application with maven wrapper
 
@@ -45,11 +46,11 @@ You'll need to install and run docker on localhost to proceed with the following
 
 ### Building the application with docker
 
-```docker build -t statement-processor-api .```
+```docker build -t statement-validator-api .```
 
 ### Running the application with docker
 
-```docker run -p 8080:8080 -t statement-processor-api```
+```docker run -p 8080:8080 -t statement-validator-api```
 
 ### Swagger-UI:
 
