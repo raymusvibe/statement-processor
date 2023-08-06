@@ -9,7 +9,7 @@ public class StatementReaderFactory {
         throw new UnsupportedOperationException("Factory class should not be instantiated");
     }
 
-    public static StatementReader getFileReader(FileType fileType) {
+    public static StatementReader getStatementReader(FileType fileType) {
         switch (fileType) {
             case CSV:
                 return new CsvStatementReader();

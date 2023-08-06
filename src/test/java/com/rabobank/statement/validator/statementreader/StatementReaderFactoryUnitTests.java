@@ -12,20 +12,21 @@ class StatementReaderFactoryUnitTests {
 
     @Test
     void StatementReaderFactory_WhenXmlFileType_XmlFileReader() {
-        StatementReader statementReader = StatementReaderFactory.getFileReader(FileType.XML);
+        StatementReader statementReader = StatementReaderFactory.getStatementReader(FileType.XML);
 
         assertEquals(statementReader.getClass(), XmlStatementReader.class);
     }
 
     @Test
     void StatementReaderFactory_WhenCsvFileType_CsvFileReader() {
-        StatementReader statementReader = StatementReaderFactory.getFileReader(FileType.CSV);
+        StatementReader statementReader = StatementReaderFactory.getStatementReader(FileType.CSV);
 
         assertEquals(statementReader.getClass(), CsvStatementReader.class);
     }
 
     @Test
     void StatementReaderFactory_WhenUnsupportedFileType_UnsupportedFileTypeException() {
-        assertThrows(UnsupportedFileTypeException.class, () -> StatementReaderFactory.getFileReader(FileType.OTHER));
+        assertThrows(
+                UnsupportedFileTypeException.class, () -> StatementReaderFactory.getStatementReader(FileType.OTHER));
     }
 }

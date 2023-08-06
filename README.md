@@ -55,7 +55,7 @@ You'll need to install and run docker on localhost to proceed with the following
 ### Swagger-UI:
 
 Once the application is running, a [swagger interface](http://localhost:8080/swagger-ui/index.htm) will become available.
-One of the endpoints produces the report in JSON format (/api/v1/report) and can be used by other applications, 
+One of the endpoints produces the report in JSON format (/api/v1/report) and can be used by other applications,
 and the other allows users to download the report in CSV format (/api/v1/report/csv).
 
 ## Technologies used

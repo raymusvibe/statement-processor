@@ -19,7 +19,7 @@ public class StatementValidationServiceImpl implements StatementValidationServic
         return Optional.of(file)
                 .map(MultipartFile::getContentType)
                 .map(FileType::fromMimeType)
-                .map(StatementReaderFactory::getFileReader)
+                .map(StatementReaderFactory::getStatementReader)
                 .map(statementReader -> statementReader.readRecords(getInputStream(file)))
                 .map(StatementValidator::validate)
                 .orElseThrow(() -> new StatementValidationException("Failed to read statement data"));
