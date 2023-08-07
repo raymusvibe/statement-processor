@@ -16,10 +16,8 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import org.modelmapper.ModelMapper;
-import org.springframework.stereotype.Component;
 import org.xml.sax.SAXException;
 
-@Component
 public class XmlStatementReader implements StatementReader {
     private final ModelMapper modelMapper;
 

@@ -1,6 +1,5 @@
 package com.rabobank.statement.validator.controller;
 
-import com.rabobank.statement.validator.dto.InvalidRecord;
 import com.rabobank.statement.validator.dto.ValidationResult;
 import com.rabobank.statement.validator.reportexporter.abstractions.ReportExporter;
 import com.rabobank.statement.validator.service.abstractions.StatementValidationService;
@@ -10,7 +9,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.constraints.NotNull;
 import java.io.IOException;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,8 +57,7 @@ public class StatementValidationController {
     public void exportCSV(@NotNull @RequestParam("file") MultipartFile inputFile, HttpServletResponse response)
             throws IOException {
         logger.info("Validating input file for export");
-        List<InvalidRecord> failedRecords = validationService.validateStatementFile(inputFile);
         response.setHeader(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=validated-statement-records.csv");
-        reportExporter.writeFailedRecords(failedRecords, response.getWriter());
+        reportExporter.writeFailedRecords(validationService.validateStatementFile(inputFile), response.getWriter());
     }
 }
