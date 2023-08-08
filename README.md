@@ -1,6 +1,6 @@
-# Rabobank Statement Validator
+# Rabobank Statement Processor
 
-The Rabobank statement validator provides an API to validate statements records uploaded in CSV and XML format.
+The Rabobank statement processor provides an API to validate statements records uploaded in CSV and XML format.
 The validation results are returned in JSON or CSV format through the two API endpoints. The JSON
 validation response can be used by other applications, while the CSV report download allows business users
 to open the validation report in a tool like Excel.
@@ -35,7 +35,7 @@ to open the validation report in a tool like Excel.
 
 ## How to run the application with Java
 
-```java -jar validator-0.0.1-SNAPSHOT.jar```
+```java -jar statement.processor-0.0.1-SNAPSHOT.jar```
 
 ## Run the application with maven wrapper
 
@@ -48,11 +48,11 @@ You'll need to install and run docker on localhost to proceed with the following
 
 ### Building the application with docker
 
-```docker build -t statement-validator-api .```
+```docker build -t statement-processor-api .```
 
 ### Running the application with docker
 
-```docker run -p 8080:8080 -t statement-validator-api```
+```docker run -p 8080:8080 -t statement-processor-api```
 
 ### Swagger-UI:
 
