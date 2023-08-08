@@ -40,14 +40,14 @@ public class CSVExporter implements ReportExporter {
             strategy.setType(InvalidRecord.class);
             strategy.captureHeader(reader);
 
-            StatefulBeanToCsv<InvalidRecord> writer = new StatefulBeanToCsvBuilder<InvalidRecord>(printWriter)
+            StatefulBeanToCsv<InvalidRecord> csvWriter = new StatefulBeanToCsvBuilder<InvalidRecord>(printWriter)
                     .withQuotechar(NO_QUOTE_CHARACTER)
                     .withSeparator(DEFAULT_SEPARATOR)
                     .withMappingStrategy(strategy)
                     .withOrderedResults(false)
                     .build();
 
-            writer.write(failedRecords);
+            csvWriter.write(failedRecords);
         } catch (CsvDataTypeMismatchException | CsvRequiredFieldEmptyException | IOException e) {
             throw new ReportExporterException(e);
         }
