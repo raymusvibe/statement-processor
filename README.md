@@ -1,7 +1,9 @@
 # Rabobank Statement Validator
 
-The Rabobank statement validator provides an API to validate statements records in CSV and XML format.
-The validation results are returned in JSON or CSV format through the two API endpoints.
+The Rabobank statement validator provides an API to validate statements records uploaded in CSV and XML format.
+The validation results are returned in JSON or CSV format through the two API endpoints. The JSON
+validation response can be used by other applications, while the CSV report download allows business users
+to open the validation report in a tool like Excel.
 
 # Requirements
 
@@ -55,8 +57,8 @@ You'll need to install and run docker on localhost to proceed with the following
 ### Swagger-UI:
 
 Once the application is running, a [swagger interface](http://localhost:8080/swagger-ui/index.htm) will become available.
-One of the endpoints produces the report in JSON format (/api/v1/report) and can be used by other applications,
-and the other allows users to download the report in CSV format (/api/v1/report/csv).
+One of the endpoints produces the report in JSON format (/api/v1/report), and the other allows users to download the
+report in CSV format (/api/v1/report/csv).
 
 ## Technologies used
 
