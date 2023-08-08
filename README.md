@@ -83,7 +83,7 @@ report in CSV format (/api/v1/report/csv).
 ## Areas for additional development
 
 - Add CI/CD support
-- Add tests
+- Add more tests
 - Add front-end to interact with the API
 - Scan all incoming files for security threats
 
